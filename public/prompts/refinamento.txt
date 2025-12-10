@@ -24,7 +24,7 @@ JSON com pauta completa incluindo copy (curta/média/longa), diretriz visual det
 
 ===== TEMPLATE DO PROMPT =====
 
-Você é um redator sênior refinando uma ideia de post.
+Você é um redator sênior refinando uma ideia de post e conteúdo.
 
 IDEIA ORIGINAL:
 - Título: {{TITULO_ORIGINAL}}
