@@ -1,7 +1,7 @@
 === PROMPT: IDEAÇÃO FOCADA EM ENGAJAMENTO ===
 
 OBJETIVO:
-Gerar ideias de posts com ALTO POTENCIAL DE ENGAJAMENTO (virais, polêmicos, emocionais).
+Gerar ideias de posts com ALTO POTENCIAL DE ENGAJAMENTO (virais, polêmicos, emocionais e educativos).
 Este é o Agente 1 do pipeline multi-agente de ideação.
 
 ENTRADAS NECESSÁRIAS:
