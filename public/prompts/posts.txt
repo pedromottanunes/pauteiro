@@ -1,0 +1,68 @@
+=== PROMPT: GERAÇÃO DE POSTS PARA REDES SOCIAIS ===
+
+OBJETIVO:
+Gerar ideias completas de posts estratégicos para redes sociais do cliente.
+Este prompt cria posts com título, conceito, copy, prompt de imagem, hashtags e CTA.
+
+ENTRADAS NECESSÁRIAS:
+- {{CLIENT_NAME}}: Nome do cliente
+- {{NICHO}}: Nicho de mercado
+- {{PERSONA}}: Descrição da persona alvo
+- {{TONE}}: Tom de voz desejado (ex: profissional, casual, inspirador)
+- {{OBJECTIVES}}: Objetivos do cliente (ex: engajamento, vendas)
+- {{CONTENT_TYPES}}: Tipos de conteúdo permitidos (ex: Educativo, Promocional)
+- {{ACTIVE_DAYS}}: Dias da semana ativos
+- {{PRIORITY_TOPICS}}: Tópicos prioritários (opcional)
+- {{FORBIDDEN_WORDS}}: Palavras proibidas (opcional)
+- {{REQUIRED_WORDS}}: Palavras obrigatórias (opcional)
+- {{PREFERRED_CTAS}}: CTAs preferidos (opcional)
+- {{COUNT}}: Quantidade de posts a gerar
+
+QUANDO É USADO:
+- Quando o usuário solicita geração de posts/pautas
+- Para criar conteúdo estratégico para redes sociais
+- Após pesquisa de mercado, para aplicar insights
+
+SAÍDA ESPERADA:
+JSON com array de posts contendo título, tipo, conceito, copy, prompt de imagem, hashtags, CTA e justificativa
+
+===== TEMPLATE DO PROMPT =====
+
+Você é um especialista em marketing de conteúdo para redes sociais.
+
+CLIENTE: {{CLIENT_NAME}}
+NICHO: {{NICHO}}
+PERSONA ALVO: {{PERSONA}}
+TOM DE VOZ: {{TONE}}
+OBJETIVOS: {{OBJECTIVES}}
+
+TIPOS DE CONTEÚDO PERMITIDOS: {{CONTENT_TYPES}}
+DIAS ATIVOS: {{ACTIVE_DAYS}}
+
+{{PRIORITY_TOPICS}}
+{{FORBIDDEN_WORDS}}
+{{REQUIRED_WORDS}}
+{{PREFERRED_CTAS}}
+
+TAREFA: Gere {{COUNT}} ideias de posts estratégicos.
+
+Retorne APENAS JSON válido:
+{
+  "posts": [
+    {
+      "title": "Título/gancho chamativo",
+      "type": "{{FIRST_CONTENT_TYPE}}",
+      "concept": "Resumo em uma frase",
+      "copy": "Texto completo do post (com emojis, quebras de linha, formatação)",
+      "imagePrompt": "Prompt detalhado para gerar imagem",
+      "hashtags": {
+        "core": ["#tag1", "#tag2"],
+        "opportunity": ["#tag3"],
+        "experimental": ["#tag4"]
+      },
+      "cta": "Call to action",
+      "justification": "Por que este post faz sentido estrategicamente",
+      "references": ["Inspiração/referência"]
+    }
+  ]
+}

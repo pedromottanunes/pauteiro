@@ -1,0 +1,62 @@
+=== PROMPT: ANÁLISE DE HASHTAGS COM DADOS REAIS DO INSTAGRAM ===
+
+OBJETIVO:
+Analisar hashtags usando dados REAIS extraídos dos posts de concorrentes no Instagram.
+Este prompt recebe a lista de hashtags encontradas e sua frequência de uso para análise estratégica.
+
+ENTRADAS NECESSÁRIAS:
+- {{NICHO}}: Nicho de mercado do cliente
+- {{POSTS_COUNT}}: Número total de posts analisados
+- {{HASHTAGS_SORTED}}: Lista ordenada de hashtags com frequência de uso
+- {{TOTAL_HASHTAGS}}: Total de hashtags encontradas
+- {{UNIQUE_HASHTAGS}}: Número de hashtags únicas
+
+QUANDO É USADO:
+- Após coleta de dados reais do Instagram via Apify
+- Para análise baseada em uso real de hashtags pelos concorrentes
+- Para identificar padrões e oportunidades com dados concretos
+
+SAÍDA ESPERADA:
+JSON com análise de hashtags incluindo frequência de uso pelo concorrente e recomendações estratégicas
+
+===== TEMPLATE DO PROMPT =====
+
+Você é um especialista em estratégia de hashtags para Instagram.
+
+DADOS REAIS: Analisei {{POSTS_COUNT}} posts de um concorrente no nicho "{{NICHO}}" e encontrei estas hashtags:
+
+HASHTAGS MAIS USADAS PELO CONCORRENTE (frequência real):
+{{HASHTAGS_SORTED}}
+
+TOTAL DE HASHTAGS ENCONTRADAS: {{TOTAL_HASHTAGS}}
+HASHTAGS ÚNICAS: {{UNIQUE_HASHTAGS}}
+
+TAREFA: Com base nos DADOS REAIS acima, faça uma análise estratégica de hashtags.
+
+Para cada hashtag relevante, determine:
+- É uma hashtag saturada demais?
+- Oferece oportunidade de alcance?
+- O cliente deve usar, adaptar ou evitar?
+
+Sugira também hashtags NOVAS que o cliente poderia usar e o concorrente não está usando.
+
+Retorne APENAS JSON:
+{
+  "hashtags": [
+    {
+      "tag": "#hashtag",
+      "usage": "concorrente",
+      "saturation": "alta",
+      "opportunity": "media",
+      "note": "Explicação baseada nos dados reais",
+      "estimatedReach": "10k-50k",
+      "recommendation": "Usar/Evitar/Adaptar",
+      "competitorUsage": 5
+    }
+  ]
+}
+
+Valores válidos:
+- usage: "concorrente" (usada pelo concorrente), "nicho" (recomendada para o nicho), "cliente" (sugestão nova)
+- saturation: "alta", "media", "baixa"
+- opportunity: "alta", "media", "baixa"

@@ -1,0 +1,34 @@
+=== PROMPT: ANÁLISE GENÉRICA DE CONCORRENTES ===
+
+OBJETIVO:
+Quando o cliente não tem concorrentes específicos configurados, este prompt gera uma análise genérica
+baseada no nicho de mercado, identificando tipos comuns de concorrentes e suas características.
+
+ENTRADAS NECESSÁRIAS:
+- {{NICHO}}: Nicho de mercado do cliente
+
+QUANDO É USADO:
+- Quando a lista de concorrentes está vazia
+- Como fallback quando a análise específica falha
+- Para dar insights iniciais sobre o mercado
+
+SAÍDA ESPERADA:
+JSON com array de 3 tipos genéricos de concorrentes do nicho com análise básica
+
+===== TEMPLATE DO PROMPT =====
+
+Analise o nicho "{{NICHO}}" e forneça uma análise genérica de 3 tipos de concorrentes típicos deste mercado.
+
+Retorne JSON:
+{
+  "competitors": [
+    {
+      "name": "Tipo de Concorrente (ex: Grandes players)",
+      "engagementScore": 70,
+      "topTopics": ["tópico comum 1", "tópico comum 2"],
+      "gap": "Oportunidade típica contra este tipo de concorrente",
+      "copyStyle": "Estilo de copy típico",
+      "hashtags": ["#hashtag1", "#hashtag2"]
+    }
+  ]
+}

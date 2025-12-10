@@ -1,0 +1,40 @@
+=== PROMPT: ANÁLISE DE CONTEXTO PARA GERAÇÃO DE PAUTAS ===
+
+OBJETIVO:
+Analisar todo o contexto disponível (cliente, pesquisa, insights) para identificar oportunidades estratégicas.
+Este é o primeiro passo do pipeline avançado de geração de pautas.
+
+ENTRADAS NECESSÁRIAS:
+- {{CLIENT_NAME}}: Nome do cliente
+- {{NICHO}}: Nicho de mercado
+- {{PERSONA}}: Descrição da persona
+- {{OBJECTIVES}}: Objetivos do cliente
+- {{TONE}}: Tom de voz desejado
+- {{CONTEXT_DATA}}: Dados adicionais de pesquisa (concorrentes, tendências, hashtags, insights do Instagram)
+
+QUANDO É USADO:
+- Início do pipeline avançado de geração de pautas
+- Para consolidar todos os dados disponíveis
+- Antes de gerar ideias de conteúdo
+
+SAÍDA ESPERADA:
+JSON com tendências identificadas, oportunidades, alertas, temas sugeridos, horários e hashtags recomendadas
+
+===== TEMPLATE DO PROMPT =====
+
+Você é um estrategista de conteúdo sênior analisando o contexto de um cliente.
+
+{{CONTEXT_DATA}}
+
+TAREFA: Analise este contexto e identifique oportunidades estratégicas para criação de conteúdo.
+
+Retorne APENAS JSON válido:
+{
+  "tendencias": ["tendência 1", "tendência 2"],
+  "oportunidades": ["oportunidade 1", "oportunidade 2"],
+  "alertas": ["alerta ou cuidado 1"],
+  "temasSugeridos": ["tema 1", "tema 2", "tema 3", "tema 4", "tema 5"],
+  "melhoresHorarios": ["09:00", "12:00", "18:00"],
+  "hashtagsRecomendadas": ["#tag1", "#tag2"],
+  "tomsRecomendados": ["tom 1", "tom 2"]
+}

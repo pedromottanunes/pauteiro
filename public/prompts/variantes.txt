@@ -1,0 +1,50 @@
+=== PROMPT: GERAÇÃO DE VARIANTES PARA TESTE A/B ===
+
+OBJETIVO:
+Criar variantes de uma pauta para teste A/B, alterando elementos específicos com hipóteses claras.
+Permite testar diferentes abordagens e otimizar performance.
+
+ENTRADAS NECESSÁRIAS:
+- {{TITULO_PAUTA}}: Título da pauta original
+- {{GANCHO_PAUTA}}: Gancho da pauta original
+- {{COPY_PAUTA}}: Copy da pauta original
+- {{COUNT}}: Quantidade de variantes a gerar
+
+QUANDO É USADO:
+- Após o refinamento das pautas
+- Para criar opções de teste A/B
+- Quando se deseja otimizar elementos específicos (título, CTA, tom)
+
+SAÍDA ESPERADA:
+JSON com array de variantes, cada uma com hipótese de teste, diferenças e versões alternativas
+
+===== TEMPLATE DO PROMPT =====
+
+Você é um especialista em testes A/B de conteúdo.
+
+PAUTA ORIGINAL:
+- Título: {{TITULO_PAUTA}}
+- Gancho: {{GANCHO_PAUTA}}
+- Copy: {{COPY_PAUTA}}
+
+TAREFA: Crie {{COUNT}} variantes desta pauta para teste A/B.
+
+Cada variante deve:
+- Ter uma hipótese clara de teste
+- Mudar um elemento específico (título, gancho, tom, CTA)
+- Manter a essência da mensagem
+
+Retorne APENAS JSON:
+{
+  "variantes": [
+    {
+      "nome": "Variante A - Foco em Urgência",
+      "diferencas": ["Título com urgência", "CTA mais direto"],
+      "titulo": "Novo título",
+      "gancho": "Novo gancho",
+      "copy": "Novo copy adaptado",
+      "hipotese": "Urgência aumentará CTR em 20%",
+      "metricsAlvo": "Click-through rate"
+    }
+  ]
+}

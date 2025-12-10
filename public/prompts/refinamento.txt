@@ -1,0 +1,78 @@
+=== PROMPT: REFINAMENTO DE IDEIA EM PAUTA COMPLETA ===
+
+OBJETIVO:
+Transformar uma ideia bruta em um post completo e profissional com copy, diretriz visual, CTAs e hashtags.
+Este é o passo de refinamento do pipeline avançado.
+
+ENTRADAS NECESSÁRIAS:
+- {{TITULO_ORIGINAL}}: Título da ideia original
+- {{TIPO_ORIGINAL}}: Tipo de conteúdo da ideia
+- {{CONCEITO_ORIGINAL}}: Conceito da ideia
+- {{GANCHO_ORIGINAL}}: Gancho da ideia
+- {{CLIENT_NAME}}: Nome do cliente
+- {{TONE}}: Tom de voz desejado
+- {{FORBIDDEN_WORDS}}: Palavras proibidas
+- {{REQUIRED_WORDS}}: Palavras obrigatórias
+
+QUANDO É USADO:
+- Após a fase de ideação
+- Para desenvolver cada ideia bruta em conteúdo completo
+- Antes da geração de variantes
+
+SAÍDA ESPERADA:
+JSON com pauta completa incluindo copy (curta/média/longa), diretriz visual detalhada, CTAs, hashtags e estratégia
+
+===== TEMPLATE DO PROMPT =====
+
+Você é um redator sênior refinando uma ideia de post.
+
+IDEIA ORIGINAL:
+- Título: {{TITULO_ORIGINAL}}
+- Tipo: {{TIPO_ORIGINAL}}
+- Conceito: {{CONCEITO_ORIGINAL}}
+- Gancho: {{GANCHO_ORIGINAL}}
+
+CLIENTE: {{CLIENT_NAME}}
+TOM: {{TONE}}
+PALAVRAS PROIBIDAS: {{FORBIDDEN_WORDS}}
+PALAVRAS OBRIGATÓRIAS: {{REQUIRED_WORDS}}
+
+TAREFA: Desenvolva esta ideia em um post completo e profissional.
+
+Retorne APENAS JSON:
+{
+  "titulo": "Título refinado e impactante",
+  "tipo": "{{TIPO_ORIGINAL}}",
+  "conceito": "Conceito expandido",
+  "gancho": "Gancho refinado",
+  "objetivo": "Objetivo estratégico deste post",
+  "copy": {
+    "curta": "Versão curta (até 150 caracteres)",
+    "media": "Versão média (300-500 caracteres com emojis e quebras)",
+    "longa": "Versão longa (800-1500 caracteres, completa)"
+  },
+  "diretrizVisual": {
+    "descricao": "Descrição detalhada da imagem",
+    "estilo": "Estilo visual (minimalista, vibrante, etc)",
+    "cores": ["#cor1", "#cor2"],
+    "elementos": ["elemento1", "elemento2"],
+    "referencias": ["referência visual"],
+    "promptMidjourney": "Prompt para Midjourney",
+    "promptDalle": "Prompt para DALL-E"
+  },
+  "cta": {
+    "principal": "CTA principal",
+    "alternativo": "CTA alternativo",
+    "urgencia": "baixa|media|alta"
+  },
+  "hashtags": {
+    "obrigatorias": ["#marca"],
+    "nicho": ["#nicho1", "#nicho2"],
+    "tendencia": ["#trend"],
+    "experimentais": ["#nova"]
+  },
+  "justificativa": "Por que este post faz sentido",
+  "basesEstrategicas": ["base 1", "base 2"],
+  "diferenciais": ["diferencial 1"],
+  "riscos": ["risco potencial"]
+}

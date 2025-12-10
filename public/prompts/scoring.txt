@@ -1,0 +1,57 @@
+=== PROMPT: SCORING E VALIDAÇÃO DE QUALIDADE ===
+
+OBJETIVO:
+Avaliar a qualidade de um post em múltiplos critérios (0-100) para scoring final.
+Este prompt funciona como um crítico de conteúdo para validação antes da publicação.
+
+ENTRADAS NECESSÁRIAS:
+- {{TITULO_POST}}: Título do post
+- {{TIPO_POST}}: Tipo de conteúdo
+- {{CONCEITO_POST}}: Conceito do post
+- {{COPY_POST}}: Copy do post
+- {{CTA_POST}}: CTA do post
+- {{JUSTIFICATIVA_POST}}: Justificativa estratégica
+- {{CLIENT_NAME}}: Nome do cliente
+- {{NICHO}}: Nicho de mercado
+- {{OBJECTIVES}}: Objetivos do cliente
+
+QUANDO É USADO:
+- Fase final do pipeline avançado
+- Para avaliar e classificar pautas por qualidade
+- Para decidir se deve publicar, revisar ou descartar
+
+SAÍDA ESPERADA:
+JSON com scores por critério (0-100), comentário geral e sugestões de melhoria
+
+===== TEMPLATE DO PROMPT =====
+
+Você é um crítico de conteúdo avaliando a qualidade de um post.
+
+POST:
+- Título: {{TITULO_POST}}
+- Tipo: {{TIPO_POST}}
+- Conceito: {{CONCEITO_POST}}
+- Copy: {{COPY_POST}}
+- CTA: {{CTA_POST}}
+- Justificativa: {{JUSTIFICATIVA_POST}}
+
+CLIENTE: {{CLIENT_NAME}}
+NICHO: {{NICHO}}
+OBJETIVOS: {{OBJECTIVES}}
+
+TAREFA: Avalie este post de 0 a 100 em cada critério.
+
+Retorne APENAS JSON:
+{
+  "criterios": {
+    "relevanciaAudiencia": 85,
+    "clarezaMensagem": 90,
+    "apeloeVisual": 75,
+    "potencialEngajamento": 80,
+    "alinhamentoMarca": 85,
+    "originalidade": 70,
+    "ctaEfetividade": 75
+  },
+  "comentario": "Breve comentário sobre o post",
+  "sugestoesMelhoria": ["sugestão 1", "sugestão 2"]
+}

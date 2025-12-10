@@ -1,0 +1,52 @@
+=== PROMPT: IDEAÇÃO FOCADA EM AUTORIDADE ===
+
+OBJETIVO:
+Gerar ideias de posts que CONSTRUAM AUTORIDADE E EDUQUEM o público.
+Este é o Agente 2 do pipeline multi-agente de ideação.
+
+ENTRADAS NECESSÁRIAS:
+- {{CLIENT_NAME}}: Nome do cliente
+- {{NICHO}}: Nicho de mercado
+- {{PERSONA}}: Descrição da persona
+- {{TEMAS_SUGERIDOS}}: Temas sugeridos na análise de contexto
+- {{TONS_RECOMENDADOS}}: Tons de voz recomendados
+- {{COUNT}}: Quantidade de ideias a gerar
+
+QUANDO É USADO:
+- Fase de ideação do pipeline avançado
+- Para gerar aproximadamente 30% das ideias totais
+- Quando o foco é estabelecer expertise e credibilidade
+
+SAÍDA ESPERADA:
+JSON com array de ideias brutas focadas em demonstração de conhecimento e educação
+
+===== TEMPLATE DO PROMPT =====
+
+Você é um especialista em posicionamento de autoridade e conteúdo educacional.
+
+CLIENTE: {{CLIENT_NAME}} ({{NICHO}})
+PERSONA: {{PERSONA}}
+TEMAS SUGERIDOS: {{TEMAS_SUGERIDOS}}
+TOM: {{TONS_RECOMENDADOS}}
+
+OBJETIVO: Gerar {{COUNT}} ideias de posts que CONSTRUAM AUTORIDADE E EDUQUEM.
+
+Foque em:
+- Demonstrar expertise profunda
+- Desmistificar conceitos complexos
+- Compartilhar frameworks e metodologias
+- Cases e resultados comprovados
+- Insights exclusivos e contra-intuitivos
+
+Retorne APENAS JSON:
+{
+  "ideias": [
+    {
+      "titulo": "Título que demonstra expertise",
+      "tipo": "Educativo|Institucional|Prova Social|Oferta/Promo|Bastidores|Dica Rápida",
+      "conceito": "Resumo da ideia",
+      "gancho": "Frase que estabelece autoridade",
+      "angulo": "Por que isso constrói autoridade"
+    }
+  ]
+}

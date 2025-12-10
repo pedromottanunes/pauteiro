@@ -1,0 +1,57 @@
+=== PROMPT: ANÁLISE ESTRATÉGICA DE HASHTAGS ===
+
+OBJETIVO:
+Analisar e recomendar hashtags estratégicas para redes sociais do cliente.
+Identifica hashtags de concorrentes, nicho e novas oportunidades, avaliando saturação e potencial.
+
+ENTRADAS NECESSÁRIAS:
+- {{NICHO}}: Nicho de mercado do cliente
+- {{EXISTING_HASHTAGS}}: Hashtags já conhecidas/usadas pelo cliente
+- {{COMPETITORS}}: Lista de nomes dos concorrentes
+
+QUANDO É USADO:
+- Durante a fase de pesquisa de mercado
+- Para otimizar estratégia de hashtags
+- Para identificar tags com alto potencial e baixa saturação
+
+SAÍDA ESPERADA:
+JSON com array de 8-12 hashtags categorizadas por tipo (concorrente/nicho/cliente) com análise de saturação e oportunidade
+
+===== TEMPLATE DO PROMPT =====
+
+Você é um especialista em estratégia de hashtags para redes sociais.
+
+NICHO: {{NICHO}}
+HASHTAGS JÁ CONHECIDAS: {{EXISTING_HASHTAGS}}
+CONCORRENTES: {{COMPETITORS}}
+
+TAREFA: Faça uma análise completa de hashtags para este nicho.
+
+Identifique 8-12 hashtags estratégicas divididas em:
+1. **Hashtags de Concorrentes**: Tags que os concorrentes mais usam
+2. **Hashtags de Nicho**: Tags específicas do mercado/segmento
+3. **Hashtags de Cliente**: Tags que o cliente deveria criar/dominar
+
+Para cada hashtag, avalie:
+- **Saturação**: alta (muito competitiva), media (moderada), baixa (pouco usada)
+- **Oportunidade**: alta (grande potencial), media (potencial moderado), baixa (pouco retorno)
+
+Retorne APENAS JSON válido:
+{
+  "hashtags": [
+    {
+      "tag": "#exemplohashtag",
+      "usage": "concorrente",
+      "saturation": "alta",
+      "opportunity": "media",
+      "note": "Explicação de por que usar ou não esta hashtag",
+      "estimatedReach": "100k-500k",
+      "recommendation": "Usar com moderação" 
+    }
+  ]
+}
+
+Valores válidos:
+- usage: "concorrente", "nicho", "cliente"
+- saturation: "alta", "media", "baixa"
+- opportunity: "alta", "media", "baixa"

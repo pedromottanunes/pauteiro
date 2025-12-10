@@ -1,0 +1,89 @@
+=== PROMPT: ANÁLISE DE CONCORRENTES COM DADOS REAIS DO INSTAGRAM ===
+
+OBJETIVO:
+Analisar concorrentes usando dados REAIS coletados via scraping do Instagram (Apify).
+Este prompt recebe posts, métricas e perfil real para fazer análise baseada em dados concretos.
+
+ENTRADAS NECESSÁRIAS:
+- {{PROFILE_USERNAME}}: Username do Instagram do concorrente
+- {{PROFILE_FULLNAME}}: Nome completo do perfil
+- {{PROFILE_BIO}}: Biografia do perfil
+- {{PROFILE_FOLLOWERS}}: Número de seguidores
+- {{PROFILE_FOLLOWING}}: Número de seguindo
+- {{PROFILE_POSTS_COUNT}}: Total de posts
+- {{PROFILE_IS_BUSINESS}}: Se é conta comercial (Sim/Não)
+- {{PROFILE_IS_VERIFIED}}: Se é verificado (Sim/Não)
+- {{PROFILE_CATEGORY}}: Categoria da conta
+- {{PROFILE_WEBSITE}}: Website do perfil
+- {{POSTS_SUMMARY}}: JSON com resumo dos últimos posts (caption, likes, comments, hashtags, tipo)
+- {{NICHO}}: Nicho do cliente
+
+QUANDO É USADO:
+- Quando dados reais do Instagram foram coletados via Apify
+- Para análise baseada em dados concretos, não estimativas
+- Durante pesquisa avançada com scraping
+
+SAÍDA ESPERADA:
+JSON com análise detalhada incluindo métricas reais de engajamento, temas, estilo e oportunidades
+
+===== TEMPLATE DO PROMPT =====
+
+Você é um analista de marketing digital especializado em Instagram.
+
+DADOS REAIS DO CONCORRENTE (coletados automaticamente):
+
+PERFIL:
+- Username: @{{PROFILE_USERNAME}}
+- Nome: {{PROFILE_FULLNAME}}
+- Bio: {{PROFILE_BIO}}
+- Seguidores: {{PROFILE_FOLLOWERS}}
+- Seguindo: {{PROFILE_FOLLOWING}}
+- Posts: {{PROFILE_POSTS_COUNT}}
+- Conta Comercial: {{PROFILE_IS_BUSINESS}}
+- Verificado: {{PROFILE_IS_VERIFIED}}
+- Categoria: {{PROFILE_CATEGORY}}
+- Website: {{PROFILE_WEBSITE}}
+
+AMOSTRA DE POSTS RECENTES:
+{{POSTS_SUMMARY}}
+
+NICHO DO CLIENTE: {{NICHO}}
+
+TAREFA: Com base nos DADOS REAIS acima, faça uma análise PROFUNDA deste concorrente.
+
+Analise:
+1. Taxa de engajamento real (likes+comments / seguidores)
+2. Temas mais abordados nas legendas
+3. Estilo de copywriting (tom, tamanho, estrutura)
+4. Hashtags mais utilizadas
+5. Tipos de conteúdo preferidos (imagem, vídeo, carrossel)
+6. Frequência de postagem estimada
+7. PONTOS FORTES (o que fazem bem)
+8. PONTOS FRACOS/GAPS (oportunidades para o cliente)
+
+Retorne APENAS JSON:
+{
+  "competitors": [
+    {
+      "name": "@{{PROFILE_USERNAME}}",
+      "engagementScore": 75,
+      "topTopics": ["tópico 1", "tópico 2", "tópico 3"],
+      "gap": "Principal oportunidade que o cliente pode explorar",
+      "copyStyle": "Descrição detalhada do estilo de copy",
+      "hashtags": ["#tag1", "#tag2"],
+      "realMetrics": {
+        "followers": {{PROFILE_FOLLOWERS}},
+        "avgLikes": 0,
+        "avgComments": 0,
+        "engagementRate": "X%"
+      },
+      "socialPresence": {
+        "mainPlatform": "Instagram",
+        "postFrequency": "X por semana",
+        "contentTypes": ["tipo1", "tipo2"],
+        "strongPoints": ["ponto forte 1"],
+        "weakPoints": ["ponto fraco 1"]
+      }
+    }
+  ]
+}

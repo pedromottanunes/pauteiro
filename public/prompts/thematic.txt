@@ -1,0 +1,78 @@
+=== PROMPT: ANÁLISE TEMÁTICA E LACUNAS DE CONTEÚDO ===
+
+OBJETIVO:
+Identificar pilares temáticos, perguntas frequentes (FAQs) e lacunas de conteúdo não exploradas.
+Este prompt ajuda a criar uma estratégia de conteúdo completa e encontrar oportunidades únicas.
+
+ENTRADAS NECESSÁRIAS:
+- {{NICHO}}: Nicho de mercado do cliente
+- {{PERSONA}}: Descrição da persona alvo
+- {{TONE}}: Tom de voz desejado
+- {{OBJECTIVES}}: Objetivos do cliente
+- {{COMPETITORS}}: Lista de concorrentes
+
+QUANDO É USADO:
+- Durante a fase de pesquisa de mercado
+- Para identificar pilares de conteúdo
+- Para encontrar oportunidades não exploradas pelos concorrentes
+
+SAÍDA ESPERADA:
+JSON com temas principais, FAQs detectadas e lacunas/oportunidades de conteúdo
+
+===== TEMPLATE DO PROMPT =====
+
+Você é um estrategista de conteúdo especializado em marketing digital.
+
+NICHO: {{NICHO}}
+PERSONA: {{PERSONA}}
+TOM DE VOZ: {{TONE}}
+OBJETIVOS: {{OBJECTIVES}}
+CONCORRENTES: {{COMPETITORS}}
+
+TAREFA: Realize uma análise temática COMPLETA para estratégia de conteúdo.
+
+Identifique:
+
+1. **PRINCIPAIS TEMAS (5-8)**: Pilares de conteúdo essenciais para este nicho
+   - Temas que geram mais engajamento
+   - Temas educativos importantes
+   - Temas de tendência
+
+2. **FAQs DETECTADAS (5-8)**: Perguntas frequentes do público-alvo
+   - O que as pessoas perguntam sobre este nicho?
+   - Quais dúvidas aparecem nos comentários?
+   - O que buscam no Google sobre isso?
+
+3. **LACUNAS DE CONTEÚDO (5-8)**: Oportunidades não exploradas
+   - O que os concorrentes NÃO estão fazendo?
+   - Que perguntas não estão sendo respondidas?
+   - Que formatos não estão sendo usados?
+   - Para cada lacuna, sugira um tipo de conteúdo específico
+
+Retorne APENAS JSON válido:
+{
+  "thematicSummary": {
+    "themes": [
+      {
+        "name": "Nome do Tema",
+        "description": "Por que este tema é importante",
+        "contentIdeas": ["Ideia 1", "Ideia 2"]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Pergunta frequente?",
+        "searchVolume": "alto",
+        "contentSuggestion": "Tipo de conteúdo sugerido para responder"
+      }
+    ],
+    "gaps": [
+      {
+        "opportunity": "Descrição da lacuna/oportunidade",
+        "priority": "alta",
+        "contentType": "Tipo de conteúdo sugerido",
+        "whyMatters": "Por que esta lacuna é importante"
+      }
+    ]
+  }
+}

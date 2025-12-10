@@ -1,0 +1,80 @@
+=== PROMPT: ANÁLISE TEMÁTICA COM DADOS REAIS DO INSTAGRAM ===
+
+OBJETIVO:
+Identificar temas, padrões e lacunas usando dados REAIS das legendas dos posts do concorrente.
+Este prompt analisa o conteúdo textual real para extrair insights estratégicos.
+
+ENTRADAS NECESSÁRIAS:
+- {{PROFILE_USERNAME}}: Username do concorrente
+- {{PROFILE_BIO}}: Bio do perfil
+- {{PROFILE_FOLLOWERS}}: Número de seguidores
+- {{PROFILE_POSTS_COUNT}}: Total de posts
+- {{CAPTIONS_COUNT}}: Quantidade de legendas analisadas
+- {{CAPTIONS_TEXT}}: Texto real das últimas legendas
+- {{NICHO}}: Nicho do cliente
+- {{PERSONA}}: Persona do cliente
+- {{TONE}}: Tom de voz desejado pelo cliente
+
+QUANDO É USADO:
+- Após coleta de dados reais do Instagram via Apify
+- Para análise profunda do conteúdo textual dos concorrentes
+- Para identificar lacunas baseadas em evidências reais
+
+SAÍDA ESPERADA:
+JSON com temas principais (com frequência), FAQs inferidas e lacunas identificadas com base em dados concretos
+
+===== TEMPLATE DO PROMPT =====
+
+Você é um estrategista de conteúdo especializado em análise competitiva no Instagram.
+
+DADOS REAIS DO CONCORRENTE @{{PROFILE_USERNAME}}:
+
+PERFIL:
+- Bio: {{PROFILE_BIO}}
+- Seguidores: {{PROFILE_FOLLOWERS}}
+- Total de posts: {{PROFILE_POSTS_COUNT}}
+
+LEGENDAS DOS ÚLTIMOS {{CAPTIONS_COUNT}} POSTS (texto real):
+{{CAPTIONS_TEXT}}
+
+NICHO DO CLIENTE: {{NICHO}}
+PERSONA DO CLIENTE: {{PERSONA}}
+TOM DE VOZ: {{TONE}}
+
+TAREFA: Com base nos DADOS REAIS acima, identifique:
+
+1. **TEMAS PRINCIPAIS** do concorrente (o que eles mais falam?)
+2. **PERGUNTAS** que o público provavelmente tem (baseado no conteúdo)
+3. **LACUNAS/GAPS** - O que o concorrente NÃO está fazendo e o cliente poderia fazer?
+
+Seja ESPECÍFICO usando as evidências dos posts reais.
+
+Retorne APENAS JSON:
+{
+  "thematicSummary": {
+    "themes": [
+      {
+        "name": "Nome do tema",
+        "description": "Evidência nos posts do concorrente",
+        "frequency": "Quantas vezes apareceu",
+        "contentIdeas": ["Ideia para o cliente 1", "Ideia 2"]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Pergunta inferida do conteúdo?",
+        "source": "Como identificamos esta pergunta",
+        "contentSuggestion": "Tipo de conteúdo para responder"
+      }
+    ],
+    "gaps": [
+      {
+        "opportunity": "O que o concorrente NÃO faz",
+        "evidence": "Como identificamos esta lacuna",
+        "priority": "alta/media/baixa",
+        "contentType": "Sugestão de conteúdo",
+        "whyMatters": "Por que o cliente deveria explorar"
+      }
+    ]
+  }
+}

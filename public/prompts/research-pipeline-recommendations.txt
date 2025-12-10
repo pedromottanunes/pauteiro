@@ -1,0 +1,66 @@
+=== PROMPT: RECOMENDAÇÕES ESTRATÉGICAS DO PIPELINE DE PESQUISA ===
+
+OBJETIVO:
+Gerar recomendações estratégicas detalhadas após análise completa de concorrentes e mercado.
+Este prompt consolida todos os dados do pipeline de pesquisa em ações concretas e caminhos estratégicos.
+
+ENTRADAS NECESSÁRIAS:
+- {{CLIENT_NAME}}: Nome do cliente
+- {{NICHO}}: Nicho de mercado
+- {{COMPETITORS_CONTEXT}}: Contexto JSON dos concorrentes analisados (username, seguidores, engajamento, qualidade visual)
+- {{TRENDS}}: Lista de tendências do nicho
+- {{CONTENT_GAPS}}: Lista de lacunas de conteúdo identificadas
+- {{POPULAR_HASHTAGS}}: Hashtags populares do nicho
+- {{VISUAL_LEADER}}: Líder visual entre concorrentes (opcional)
+
+QUANDO É USADO:
+- Ao final do pipeline de pesquisa (researchPipeline.ts)
+- Após análise completa de concorrentes, tendências e hashtags
+- Para gerar relatório estratégico com caminhos de ação
+
+SAÍDA ESPERADA:
+JSON com situação atual, 3 caminhos estratégicos diferentes, recomendações de conteúdo, ações urgentes e metas de longo prazo
+
+===== TEMPLATE DO PROMPT =====
+
+Você é um estrategista de marketing digital especializado em redes sociais.
+
+CONTEXTO:
+- Cliente: {{CLIENT_NAME}}
+- Nicho: {{NICHO}}
+- Concorrentes analisados: {{COMPETITORS_CONTEXT}}
+- Tendências do nicho: {{TRENDS}}
+- Lacunas identificadas: {{CONTENT_GAPS}}
+- Hashtags populares: {{POPULAR_HASHTAGS}}
+{{VISUAL_LEADER}}
+
+TAREFA:
+Gere recomendações estratégicas detalhadas em JSON com a seguinte estrutura:
+{
+  "currentSituation": "Análise da situação atual do mercado e concorrência",
+  "strategicPaths": [
+    {
+      "name": "Nome do caminho estratégico",
+      "description": "Descrição detalhada",
+      "difficulty": "easy|medium|hard",
+      "timeToResults": "tempo esperado",
+      "requiredResources": ["recurso1", "recurso2"],
+      "expectedOutcomes": ["resultado1", "resultado2"],
+      "actionSteps": ["passo1", "passo2", "passo3", "passo4"]
+    }
+  ],
+  "contentRecommendations": [
+    {
+      "type": "reels|carousel|stories|feed",
+      "theme": "tema do conteúdo",
+      "frequency": "frequência recomendada",
+      "bestTimes": ["horário1", "horário2"],
+      "hashtags": ["hashtag1", "hashtag2"],
+      "exampleIdeas": ["ideia1", "ideia2", "ideia3"]
+    }
+  ],
+  "urgentActions": ["ação urgente 1", "ação urgente 2"],
+  "longTermGoals": ["meta de longo prazo 1", "meta 2"]
+}
+
+Seja específico para o nicho de {{NICHO}}. Forneça 3 caminhos estratégicos diferentes que o cliente pode escolher, cada um com abordagem distinta.

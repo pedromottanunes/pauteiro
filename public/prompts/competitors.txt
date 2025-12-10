@@ -1,0 +1,70 @@
+=== PROMPT: ANÁLISE DE REDES SOCIAIS DOS CONCORRENTES ===
+
+OBJETIVO:
+Analisar a presença digital e estratégia de redes sociais dos concorrentes do cliente.
+Este prompt busca identificar pontos fortes, pontos fracos e oportunidades (gaps) que o cliente pode explorar.
+
+ENTRADAS NECESSÁRIAS:
+- {{CLIENT_NAME}}: Nome do cliente
+- {{NICHO}}: Nicho de mercado do cliente
+- {{PERSONA}}: Descrição da persona alvo (opcional)
+- {{COMPETITORS_LIST}}: Lista formatada dos concorrentes com nome, site e perfis sociais
+
+QUANDO É USADO:
+- Durante a fase de pesquisa de mercado
+- Quando o cliente tem concorrentes configurados
+- Para análise competitiva baseada em dados públicos
+
+SAÍDA ESPERADA:
+JSON com array de objetos contendo análise detalhada de cada concorrente incluindo:
+- Engajamento score, tópicos principais, gaps, estilo de copy, hashtags, presença social
+
+===== TEMPLATE DO PROMPT =====
+
+Você é um analista especializado em redes sociais e marketing digital.
+
+CONTEXTO:
+- Cliente: {{CLIENT_NAME}}
+- Nicho: {{NICHO}}
+- Persona: {{PERSONA}}
+
+CONCORRENTES A ANALISAR:
+{{COMPETITORS_LIST}}
+
+TAREFA: Realize uma análise PROFUNDA e DETALHADA de cada concorrente focando em suas REDES SOCIAIS (Instagram, Facebook, TikTok, LinkedIn).
+
+Para cada concorrente, analise:
+
+1. **Presença Digital**: Quais redes sociais usam? Qual é a principal?
+2. **Frequência de Posts**: Quantas vezes postam por semana/dia?
+3. **Tipos de Conteúdo**: Reels, carrosséis, stories, posts estáticos, lives?
+4. **Estilo de Copywriting**: Tom de voz, tamanho das legendas, uso de emojis, estrutura
+5. **CTAs Utilizados**: Quais chamadas para ação mais usam?
+6. **Engajamento**: Taxa estimada de engajamento (curtidas/comentários vs seguidores)
+7. **Hashtags Frequentes**: Quais hashtags mais utilizam?
+8. **Pontos Fortes**: O que fazem bem?
+9. **Pontos Fracos (GAP)**: O que NÃO fazem bem ou não fazem? (Oportunidades para o cliente)
+10. **Anúncios Pagos**: Se visível, que tipo de conteúdo promovem?
+
+IMPORTANTE: Retorne APENAS JSON válido, sem markdown.
+
+Estrutura esperada:
+{
+  "competitors": [
+    {
+      "name": "Nome do Concorrente",
+      "engagementScore": 75,
+      "topTopics": ["tópico 1", "tópico 2", "tópico 3"],
+      "gap": "Descrição detalhada do ponto fraco/oportunidade que o cliente pode explorar",
+      "copyStyle": "Descrição do estilo de copy (tom, tamanho, uso de emojis)",
+      "hashtags": ["#tag1", "#tag2", "#tag3"],
+      "socialPresence": {
+        "mainPlatform": "Instagram",
+        "postFrequency": "5x por semana",
+        "contentTypes": ["Reels", "Carrosséis"],
+        "strongPoints": ["Boa identidade visual", "Consistência"],
+        "weakPoints": ["Pouca interação nos comentários", "Não usa stories"]
+      }
+    }
+  ]
+}

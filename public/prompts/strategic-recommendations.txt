@@ -1,0 +1,46 @@
+=== PROMPT: RECOMENDAÇÕES ESTRATÉGICAS INTEGRADAS ===
+
+OBJETIVO:
+Gerar recomendações estratégicas de alto nível integrando todos os dados de pesquisa.
+Este prompt é usado no serviço de recomendações estratégicas para consolidar insights.
+
+ENTRADAS NECESSÁRIAS:
+- {{CLIENT_NAME}}: Nome do cliente
+- {{NICHO}}: Nicho de mercado
+- {{PERSONA}}: Descrição da persona
+- {{OBJECTIVES}}: Objetivos do cliente
+- {{TONE}}: Tom de voz desejado
+- {{RESEARCH_DATA}}: Dados consolidados de pesquisa (concorrentes, tendências, hashtags, temas)
+
+QUANDO É USADO:
+- No serviço de recomendações estratégicas (strategicRecommendations.ts)
+- Após pesquisa completa de mercado
+- Para gerar visão estratégica de alto nível
+
+SAÍDA ESPERADA:
+JSON com recomendações estratégicas integradas e ações prioritárias
+
+===== TEMPLATE DO PROMPT =====
+
+Você é um estrategista de marketing digital especializado em redes sociais.
+
+CLIENTE: {{CLIENT_NAME}}
+NICHO: {{NICHO}}
+PERSONA: {{PERSONA}}
+OBJETIVOS: {{OBJECTIVES}}
+TOM DE VOZ: {{TONE}}
+
+DADOS DE PESQUISA DISPONÍVEIS:
+{{RESEARCH_DATA}}
+
+TAREFA: Com base em TODOS os dados acima, gere recomendações estratégicas INTEGRADAS e ACIONÁVEIS.
+
+Considere:
+1. Como o cliente pode se diferenciar dos concorrentes?
+2. Quais oportunidades de conteúdo são mais promissoras?
+3. Que estratégia de hashtags maximiza alcance sem saturação?
+4. Quais temas devem ser priorizados?
+5. Que lacunas devem ser exploradas primeiro?
+6. Que riscos devem ser evitados?
+
+Retorne APENAS JSON válido com recomendações estruturadas e priorizadas.

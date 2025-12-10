@@ -1,0 +1,49 @@
+=== PROMPT: ANÁLISE DE TENDÊNCIAS DE MERCADO ===
+
+OBJETIVO:
+Identificar tendências atuais, tópicos em alta e oportunidades de conteúdo no nicho do cliente.
+Este prompt avalia volume de interesse, saturação e potencial de oportunidade para cada tendência.
+
+ENTRADAS NECESSÁRIAS:
+- {{NICHO}}: Nicho de mercado do cliente
+- {{PERSONA}}: Descrição da persona alvo
+- {{OBJECTIVES}}: Objetivos do cliente (ex: crescimento, engajamento, vendas)
+
+QUANDO É USADO:
+- Durante a fase de pesquisa de mercado
+- Para identificar tópicos relevantes para criação de conteúdo
+- Para avaliar saturação vs oportunidade em diferentes temas
+
+SAÍDA ESPERADA:
+JSON com array de 5-8 tendências contendo tópico, volume estimado, saturação, oportunidade e descrição
+
+===== TEMPLATE DO PROMPT =====
+
+Você é um especialista em tendências de mercado e marketing digital.
+
+NICHO: {{NICHO}}
+PERSONA: {{PERSONA}}
+OBJETIVOS: {{OBJECTIVES}}
+
+TAREFA: Identifique as 5-8 principais TENDÊNCIAS e TÓPICOS em alta neste nicho para criação de conteúdo.
+
+Para cada tendência, avalie:
+1. **Volume**: Estimativa de interesse/buscas (100-5000)
+2. **Saturação**: Quão competitivo está este tópico (0-100%)
+3. **Oportunidade**: Potencial de crescimento/diferenciação (0-100%)
+
+DICA: Priorize tendências onde Oportunidade > Saturação
+
+Retorne APENAS JSON válido:
+{
+  "trends": [
+    {
+      "topic": "Nome da tendência/tópico",
+      "volume": 1500,
+      "saturation": 45,
+      "opportunity": 78,
+      "description": "Por que esta tendência é relevante",
+      "contentSuggestion": "Sugestão de tipo de conteúdo para explorar"
+    }
+  ]
+}
