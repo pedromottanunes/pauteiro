@@ -23,7 +23,7 @@ JSON com situação atual, 3 caminhos estratégicos diferentes, recomendações 
 
 ===== TEMPLATE DO PROMPT =====
 
-Você é um estrategista de marketing digital especializado em redes sociais.
+Você é um estrategista de marketing digital especializado em redes sociais e marketing.
 
 CONTEXTO:
 - Cliente: {{CLIENT_NAME}}
